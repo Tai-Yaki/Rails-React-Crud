@@ -1,0 +1,1198 @@
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('3193672821592755180', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateProducts (20190417082713)
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `product` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190417082713')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-04-17 08:47:18', '2019-04-17 08:47:18')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('3193672821592755180')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('犬', '2019-04-17 08:47:24', '2019-04-17 08:47:24')[0m
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('猫', '2019-04-17 08:47:24', '2019-04-17 08:47:24')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('馬', '2019-04-17 08:47:24', '2019-04-17 08:47:24')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/products/" for ::1 at 2019-04-17 18:42:30 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/products" for ::1 at 2019-04-17 18:57:50 +0900
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>"鳥"}
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('{\"product\"=>\"鳥\"}', '2019-04-17 09:57:50', '2019-04-17 09:57:50')[0m
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 41.5ms)
+
+
+Started GET "/products/" for ::1 at 2019-04-17 18:57:58 +0900
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/products" for ::1 at 2019-04-17 19:21:37 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/products"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/products/4" for ::1 at 2019-04-17 19:22:54 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/products/4"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/products/4" for ::1 at 2019-04-17 19:23:03 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/products/4"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products/4" for ::1 at 2019-04-17 19:27:29 +0900
+Processing by ProductsController#update as */*
+  Parameters: {"product"=>"猿", "id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE `products` SET `product` = '猿', `updated_at` = '2019-04-17 10:27:29' WHERE `products`.`id` = 4[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/products/" for ::1 at 2019-04-17 19:27:39 +0900
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/products/4" for ::1 at 2019-04-17 19:28:03 +0900
+Processing by ProductsController#destroy as */*
+  Parameters: {"id"=>"4", "product"=>{}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 4[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 8ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/products/" for ::1 at 2019-04-17 19:28:06 +0900
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 23:05:34 +0900
+  [1m[35m (46.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (63.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 73ms (Views: 5.1ms | ActiveRecord: 65.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 23:05:39 +0900
+Processing by ProductsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 23:05:56 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 23:16:16 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 23:16:18 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:17:39 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:17:43 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:17:45 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-04-18 09:22:24 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-04-18 09:22:24 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products" for ::1 at 2019-04-18 09:36:06 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:37:33 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:37:34 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:38:03 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:38:11 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:39:14 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:45:31 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:45:47 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:45:49 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:45:54 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:45:56 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:46:09 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:48:07 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 09:48:14 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>"さる"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('{\"product\"=>\"さる\"}', '2019-04-18 00:48:14', '2019-04-18 00:48:14')[0m
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 41.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:55:28 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:55:33 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 09:55:43 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>"ラクダ"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:57:45 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 09:57:56 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>"ラクダ"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 09:59:39 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 09:59:46 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>"ラクダ"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('ラクダ', '2019-04-18 00:59:46', '2019-04-18 00:59:46')[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:03:00 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 12ms (Views: 6.1ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 10:03:07 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>"とり"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('とり', '2019-04-18 01:03:07', '2019-04-18 01:03:07')[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:30:01 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:31:34 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:38:32 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/products/1" for ::1 at 2019-04-18 10:38:35 +0900
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 10ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:40:43 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:41:24 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/products/4" for ::1 at 2019-04-18 10:41:27 +0900
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 4[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 8ms (ActiveRecord: 6.2ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 10:41:37 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>"さる"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('さる', '2019-04-18 01:41:37', '2019-04-18 01:41:37')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/5" for ::1 at 2019-04-18 10:41:45 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/5"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/5" for ::1 at 2019-04-18 10:41:49 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/5"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/5" for ::1 at 2019-04-18 10:44:44 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/5"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-04-18 10:44:55 +0900
+Processing by Rails::WelcomeController#index as */*
+  Rendering vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (1.4ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:45:58 +0900
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/5" for ::1 at 2019-04-18 10:46:15 +0900
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ProductsController):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/abstract_controller/base.rb:119:in `process'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:189:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:253:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `each'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:844:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/migration.rb:556:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/callbacks.rb:97:in `run_callbacks'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/product/5" for ::1 at 2019-04-18 10:46:19 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/product/5"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/product/5" for ::1 at 2019-04-18 10:47:21 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/product/5"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/product/5" for ::1 at 2019-04-18 10:49:00 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/product/5"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+product=クジラ
+Started GET "/products" for ::1 at 2019-04-18 10:49:10 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:49:14 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/product/5" for ::1 at 2019-04-18 10:49:42 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/product/5"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+product:
+Started PATCH "/products/5" for ::1 at 2019-04-18 10:50:05 +0900
+Error occurred while parsing request parameters.
+Contents:
+
+product:
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at 'product:'):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:115:in `rescue in parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:109:in `parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:361:in `block in POST'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch_header'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:360:in `POST'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/abstract_controller/base.rb:124:in `process'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:189:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:253:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `each'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:844:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/migration.rb:556:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/callbacks.rb:97:in `run_callbacks'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products/5" for ::1 at 2019-04-18 10:50:31 +0900
+Error occurred while parsing request parameters.
+Contents:
+
+product:
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at 'product:'):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:115:in `rescue in parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:109:in `parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:361:in `block in POST'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch_header'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:360:in `POST'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/abstract_controller/base.rb:124:in `process'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:189:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:253:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `each'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:844:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/migration.rb:556:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/callbacks.rb:97:in `run_callbacks'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products/5" for ::1 at 2019-04-18 10:50:37 +0900
+Error occurred while parsing request parameters.
+Contents:
+
+product: クジラ
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at 'product: クジラ'):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:115:in `rescue in parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:109:in `parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:361:in `block in POST'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch_header'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:360:in `POST'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/abstract_controller/base.rb:124:in `process'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:189:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:253:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `each'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:844:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/migration.rb:556:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/callbacks.rb:97:in `run_callbacks'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products/5" for ::1 at 2019-04-18 10:52:12 +0900
+Error occurred while parsing request parameters.
+Contents:
+
+{"product: クジラ"}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{"product: クジラ"}'):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:115:in `rescue in parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:109:in `parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:361:in `block in POST'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch_header'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:360:in `POST'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/abstract_controller/base.rb:124:in `process'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:189:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:253:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `each'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:844:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/migration.rb:556:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/callbacks.rb:97:in `run_callbacks'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products/5" for ::1 at 2019-04-18 10:52:34 +0900
+Error occurred while parsing request parameters.
+Contents:
+
+{"product: クジラ"}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{"product: クジラ"}'):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:115:in `rescue in parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/parameters.rb:109:in `parse_formatted_parameters'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:361:in `block in POST'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/request.rb:59:in `fetch_header'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/http/request.rb:360:in `POST'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:286:in `_wrapper_enabled?'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/abstract_controller/base.rb:124:in `process'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:189:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_controller/metal.rb:253:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `each'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/journey/router.rb:33:in `serve'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/routing/route_set.rb:844:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/activerecord-5.1.7/lib/active_record/migration.rb:556:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/callbacks.rb:97:in `run_callbacks'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products/5" for ::1 at 2019-04-18 10:52:51 +0900
+Processing by ProductsController#update as */*
+  Parameters: {"product"=>"クジラ", "id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 5 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE `products` SET `product` = 'クジラ', `updated_at` = '2019-04-18 01:52:51' WHERE `products`.`id` = 5[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:53:03 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 10:53:34 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/products/5" for ::1 at 2019-04-18 10:53:41 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"ラクダ", "id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 5 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `products` SET `product` = 'ラクダ', `updated_at` = '2019-04-18 01:53:41' WHERE `products`.`id` = 5[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 6.2ms)
+
+
+Started PATCH "/products/3" for ::1 at 2019-04-18 10:53:52 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `products` SET `product` = '', `updated_at` = '2019-04-18 01:53:52' WHERE `products`.`id` = 3[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 6.1ms)
+
+
+Started PATCH "/products/3" for ::1 at 2019-04-18 10:53:54 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/products/3" for ::1 at 2019-04-18 10:53:54 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/products/3" for ::1 at 2019-04-18 10:53:54 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/products/3" for ::1 at 2019-04-18 10:53:54 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/products/3" for ::1 at 2019-04-18 10:53:55 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/products/3" for ::1 at 2019-04-18 10:53:55 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/products/3" for ::1 at 2019-04-18 10:53:55 +0900
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>"", "id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/products/3" for ::1 at 2019-04-18 10:53:56 +0900
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 3[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 8ms (ActiveRecord: 6.2ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 10:54:03 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>""}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('', '2019-04-18 01:54:03', '2019-04-18 01:54:03')[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 5.4ms)
+
+
+Started DELETE "/products/8" for ::1 at 2019-04-18 10:54:05 +0900
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 8[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 8ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 12:16:33 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/products/2" for ::1 at 2019-04-18 12:16:35 +0900
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 2[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 10ms (ActiveRecord: 6.5ms)
+
+
+Started DELETE "/products/5" for ::1 at 2019-04-18 12:16:36 +0900
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 5 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 5[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 2ms (ActiveRecord: 1.0ms)
+
+
+Started DELETE "/products/6" for ::1 at 2019-04-18 12:16:37 +0900
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 6 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 6[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.0ms)
+
+
+Started DELETE "/products/7" for ::1 at 2019-04-18 12:16:39 +0900
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `products` WHERE `products`.`id` = 7[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 8ms (ActiveRecord: 6.2ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 12:16:41 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>"さる"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('さる', '2019-04-18 03:16:41', '2019-04-18 03:16:41')[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/products" for ::1 at 2019-04-18 12:16:46 +0900
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>"とり"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `products` (`product`, `created_at`, `updated_at`) VALUES ('とり', '2019-04-18 03:16:46', '2019-04-18 03:16:46')[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 6.0ms)
+
+

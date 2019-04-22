@@ -1196,3 +1196,137 @@ Processing by ProductsController#create as HTML
 Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 6.0ms)
 
 
+Started GET "/" for ::1 at 2019-04-22 18:50:54 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo" for ::1 at 2019-04-22 18:51:03 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/todo"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/index" for ::1 at 2019-04-22 18:51:10 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-04-22 18:51:14 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todos" for ::1 at 2019-04-22 18:51:17 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/todos"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/todos" for ::1 at 2019-04-22 18:53:18 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/todos"):
+  
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:36:in `call_app'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `block in call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/tagged_logging.rb:69:in `tagged'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/rack/logger.rb:24:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+vendor/bundle/ruby/2.6.0/gems/activesupport-5.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/executor.rb:12:in `call'
+vendor/bundle/ruby/2.6.0/gems/actionpack-5.1.7/lib/action_dispatch/middleware/static.rb:125:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+vendor/bundle/ruby/2.6.0/gems/rack-cors-1.0.3/lib/rack/cors.rb:95:in `call'
+vendor/bundle/ruby/2.6.0/gems/railties-5.1.7/lib/rails/engine.rb:522:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-04-22 18:53:49 +0900
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (43.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 55ms (Views: 7.2ms | ActiveRecord: 44.5ms)
+
+
+Started GET "/products" for ::1 at 2019-04-22 18:56:11 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 1.2ms)
+
+
